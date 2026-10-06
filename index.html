@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The AI Map · July 2026</title>
+<title>The AI Map · October 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -447,7 +447,7 @@
 <div class="wrap">
 
 <header>
-  <div class="kicker rise">A field guide for July 2026</div>
+  <div class="kicker rise">A field guide for October 2026</div>
   <h1 aria-label="The AI Map"><span class="w"><i>The</i></span> <span class="w"><i><em>AI</em></i></span> <span class="w"><i>Map</i></span></h1>
   <p class="sub rise" style="animation-delay:.45s">Three layers explain the whole ecosystem: <b>models</b> are the engines, <b>tools</b> are the apps built on them, and <b>agents</b> do the work for you.</p>
   <div class="stats rise">
@@ -1346,8 +1346,8 @@ const cosmos=(function(){
 (function theme(){
   const btn=document.getElementById("themeBtn");
   const apply=d=>{document.body.classList.toggle("theme-dark",d);btn.textContent=d?"Light":"Dark";d?cosmos.start():cosmos.stop()};
-  let dark=false;
-  try{dark=localStorage.getItem("aimap-theme")==="dark"}catch(e){}
+  let dark=true;
+  try{dark=localStorage.getItem("aimap-theme")!=="light"}catch(e){}
   apply(dark);
   btn.addEventListener("click",()=>{dark=!dark;apply(dark);try{localStorage.setItem("aimap-theme",dark?"dark":"light")}catch(e){}});
 })();
